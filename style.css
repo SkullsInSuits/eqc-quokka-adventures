@@ -1,0 +1,162 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bg-quokka {
+  background-color: #d9772b; /* warm orange from logo */
+}
+
+.btn-quokka {
+  background-color: #d9772b;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-quokka:hover {
+  background-color: #a6541f;
+  color: #fff;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.card-title {
+  font-weight: 700;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Typography & Base */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #fff;
+}
+
+h2, h5 {
+  font-weight: 700;
+  color: #a6541f;
+}
+
+section {
+  padding: 60px 0;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #d9772b;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.nav-link {
+  color: #fff !important;
+  margin-left: 15px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Carousel */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.carousel-caption h2 {
+  color: #fff;
+}
+
+/* Services */
+.card {
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  color: #d9772b;
+}
+
+/* Buttons */
+.btn-quokka {
+  background-color: #d9772b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-quokka:hover {
+  background-color: #a6541f;
+  color: #fff;
+}
+
+/* Contact Section */
+.bg-quokka {
+  background-color: #d9772b;
+}
+
+#contact input,
+#contact textarea {
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+}
+
+#contact button {
+  background-color: #fff;
+  color: #d9772b;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+  background-color: #f4f4f4;
+}
+
+/* FAQ Accordion */
+.accordion-button {
+  font-weight: 600;
+  color: #a6541f;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #fbe3d1;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .carousel-caption {
+    font-size: 0.9rem;
+  }
+
+  .btn-quokka {
+    width: 100%;
+  }
+}

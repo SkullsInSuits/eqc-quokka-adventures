@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quokka Adventure - Brand Style Guide</title>
+
+    <!-- Google Fonts for Nunito (Headings) and Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Nunito:wght@700;800&display=swap"
+        rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />  
+    <!-- Custom CSS for Style Guide -->
+     <link href="style.css" rel="stylesheet" />
+
+    <style>
+        /* ------------------------------------------------------------------- */
+        /* QUOKKA ADVENTURE: OFFICIAL BRAND STYLE GUIDE CSS */
+        /* ------------------------------------------------------------------- */
+
+        /* --- Root Variables: The Practical CSS Foundation (J-R-A-S Colours) --- */
+        :root {
+            /* Core Colours */
+            --color-sand: #EDEAE0;
+            /* Rottnest Sand (Primary Neutral) */
+            --color-brown: #A1522F;
+            /* Quokka Brown (Primary Accent) */
+            --color-blue: #0077B6;
+            /* Indian Ocean Blue (Secondary - Trust) */
+            --color-sun: #FFC300;
+            /* Rottnest Sun (Tertiary Accent - Joy/CTA) */
+            --color-white: #FFFFFF;
+            --color-text-dark: #333333;
+            /* For body copy */
+
+            /* Typography */
+            --font-heading: 'Nunito', sans-serif;
+            /* Bold, Rounded, Friendly */
+            --font-body: 'Inter', sans-serif;
+            /* Clean, Efficient, Readable */
+
+            /* Spacing (8pt Grid System) */
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 32px;
+            --spacing-lg: 48px;
+        }
+
+        /* --- Global Reset & Base Typography --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--color-text-dark);
+            background-color: var(--color-sand);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* --- Header & Section Styling --- */
+        .header {
+            background-color: var(--color-brown);
+            color: var(--color-white);
+            padding: var(--spacing-lg) 0;
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .header h1 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .header p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.125rem;
+        }
+
+        .section {
+            padding: var(--spacing-lg) 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .section--light {
+            background-color: var(--color-white);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 2.25rem;
+            color: var(--color-brown);
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* --- Headings (The Nunito Vibe) --- */
+        h1,
+        h2,
+        h3,
+        h4,
+        .h1-example,
+        .h2-example,
+        .h3-example {
+            font-family: var(--font-heading);
+            color: var(--color-brown);
+            line-height: 1.2;
+        }
+
+        /* Typographic Scale */
+        .h1-example {
+            font-size: 3.0rem;
+            font-weight: 800;
+        }
+
+        .h2-example {
+            font-size: 2.25rem;
+            font-weight: 800;
+        }
+
+        .h3-example {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .body-example {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--color-text-dark);
+        }
+
+
+        /* --- Cards & Grid Layouts --- */
+        .card-grid,
+        .colour-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .card {
+            background-color: var(--color-white);
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h3 {
+            color: var(--color-blue);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* --- Colour Swatches --- */
+        .colour-card {
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            text-align: center;
+            color: var(--color-white);
+            /* Default text color for dark backgrounds */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: var(--bg-color);
+        }
+
+        .colour-card h4 {
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.2rem;
+        }
+
+        /* Specific text colour adjustment for Rottnest Sun for accessibility */
+        .colour-card[style*="#FFC300"] {
+            color: var(--color-brown);
+            /* Ensures good contrast on bright yellow */
+        }
+
+        /* --- Buttons --- */
+        .button-example {
+            display: flex;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) 0;
+        }
+
+        .btn {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            border: none;
+        }
+
+        .btn--primary {
+            background-color: var(--color-blue);
+            color: var(--color-sand);
+            box-shadow: 0 3px 0 var(--color-brown);
+        }
+
+        .btn--primary:hover {
+            background-color: #005B8C;
+            /* Slightly Darker Blue */
+            box-shadow: 0 1px 0 var(--color-brown);
+            transform: translateY(2px);
+        }
+
+        .btn--secondary {
+            background-color: transparent;
+            color: var(--color-brown);
+            border: 2px solid var(--color-brown);
+        }
+
+        .btn--secondary:hover {
+            background-color: var(--color-sand);
+        }
+
+        .btn--llm {
+            background-color: var(--color-sun);
+            color: var(--color-brown);
+            box-shadow: 0 3px 0 #D4A300;
+        }
+
+        .btn--llm:hover {
+            background-color: #D4A300;
+            box-shadow: 0 1px 0 #A1522F;
+            transform: translateY(2px);
+        }
+
+        .btn--llm:disabled {
+            background-color: #d1d1d1;
+            color: #888;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .btn--default {
+            background-color: var(--color-white);
+            color: var(--color-brown);
+            border: 2px solid var(--color-brown);
+            box-shadow: 0 2px 0 var(--color-sand);
+        }
+
+        .btn--default:hover {
+            background-color: var(--color-sand);
+            color: var(--color-blue);
+            border-color: var(--color-blue);
+        }
+
+        .btn--default:disabled {
+            background-color: #f0f0f0;
+            color: #aaa;
+            border-color: #ddd;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        /* --- Voice & Logo Sections --- */
+        .voice-card {
+            border-left: 5px solid var(--color-sun);
+            background-color: var(--color-sand);
+            padding: var(--spacing-sm);
+            margin: var(--spacing-sm) 0;
+            border-radius: 4px;
+        }
+
+        .voice-title {
+            font-weight: 700;
+            color: var(--color-blue);
+            margin-bottom: 4px;
+        }
+
+        .voice-quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--color-text-dark);
+        }
+
+        /* Logo specific styling */
+        .logo-placeholder {
+            padding: var(--spacing-md);
+            text-align: center;
+            border: 1px dashed var(--color-brown);
+            margin-top: var(--spacing-sm);
+            background-color: var(--color-white);
+            border-radius: 8px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .logo-img {
+            max-width: 250px;
+            height: auto;
+            border-radius: 8px;
+            margin: var(--spacing-xs) 0;
+            border: 1px solid var(--color-sand);
+        }
+
+        .logo-icon {
+            max-width: 80px;
+            /* Smaller max width for favicons/small icons */
+            padding: 5px;
+        }
+
+        .detail {
+            margin-top: var(--spacing-sm);
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* --- V. FEATURED IMAGE ASSETS (TILES) --- */
+        .image-tiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            /* Responsive grid */
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+
+        .image-tile {
+            background-color: var(--color-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .image-tile img {
+            width: 100%;
+            height: 200px;
+            /* Consistent height for neat tiling */
+            object-fit: cover;
+            /* Ensures image fills the space without distortion */
+            display: block;
+        }
+
+        .image-tile h4 {
+            font-family: var(--font-heading);
+            color: var(--color-blue);
+            margin: var(--spacing-xs) 0 4px 0;
+        }
+
+        .image-tile .detail {
+            margin-bottom: var(--spacing-sm);
+            padding: 0 var(--spacing-xs);
+        }
+
+        /* --- VI. AI Copywriter Specific Styling --- */
+        .llm-card {
+            background-color: var(--color-white);
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .llm-card textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            resize: vertical;
+        }
+
+        #output-box {
+            min-height: 80px;
+            padding: var(--spacing-sm);
+            border: 2px solid var(--color-sand);
+            background-color: #f7f7f7;
+            border-radius: 4px;
+            white-space: pre-wrap;
+        }
+
+        .loading-indicator {
+            color: var(--color-brown);
+            font-weight: 700;
+            text-align: center;
+            padding: var(--spacing-sm);
+        }
+    </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-quokka">
+    <div class="container">
+      <a class="navbar-brand" href="#">Quokka Adventures</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+
+<section class="header" id="brand-style-guide">
+<header class="header sticky-top" style="top: 0;">
+    <h1 class="h1" id="quokka-adventure"><u>Quokka Adventure: Official Brand Style Guide</u></h1>
+    <h4 class="h4">Your guide to building a brand that's as joyful, authentic, and sun-drenched as a Rottnest summer day.</h4>
+</header>
+</section>
+
+    <main class="container">
+<!-- I. Brand Foundation -->
+        <section class="section" id="brand-foundation">
+            <!--section header--> <header class="section-header">
+            <!--section title--><h2 class="section-title">Brand  Foundation</h2>
+            </header>
+            <p class="detail">At the heart of Quokka Adventure lies our commitment to delivering joyful, authentic experiences that
+                celebrate the unique charm of Rottnest Island and its happiest resident, the Quokka. Our brand foundation
+                is built on four core pillars that define who we are and how we connect with our audience.<br>
+                <br>
+                <small>"The J-R-A-S Method"</small></p>
+            
+        <!-- Mission, Vision, Core Values Cards -->
+        <div class="section" id="mission-vision-values">
+    <!--card grid--> <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+
+            <!-- Mission Card -->  
+                <div class="card">
+                    <h3>Mission</h3>
+                    <p>To provide safe, joyful, and authentic encounters with Australia's happiest animal, fostering
+                        appreciation for Rottnest Island's unique environment.</p>
+                </div>
+                <!-- Vision Card -->
+                <div class="card">
+                    <h3>Vision</h3>
+                    <p>To be the most trusted and celebrated Quokka tour experience in Western Australia, known for
+                        safety, sustainability, and infectious Aussie spirit.</p>
+                        
+                </div>
+            
+            <!-- Core Values Card -->
+            <div class="card">
+                <h3>Core Values</h3> 
+                <ul>
+                    <li><strong>Joyful:</strong> Infectious enthusiasm and optimism.</li>
+                    <li><strong>Respectful:</strong> Honouring the Quokka and the environment.</li>
+                    <li><strong>Authentic:</strong> Genuine experiences, not manufactured moments.</li>
+                    <li><strong>Safe:</strong> Prioritising the well-being of guests and wildlife.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="section">
+            <!-- Brand Voice Section -->
+            <h3>Brand Voice</h3>
+            <p>Quokka Adventure's brand voice is a reflection of our core values: Witty, Casual, Enthusiastic, and
+                Affectionate. Our tone is friendly and approachable, with a touch of Aussie slang to keep things light
+                and engaging. We aim to make every interaction feel like a sunny day on Rottnest Island.</p>  <br>
+        <h4 class="title">Voice Examples</h4>
+        <div class="voice-card">
+            <p class="voice-title">Error Message (404)</p>
+            <blockquote class="voice-quote">Oops! Seems like that page swam off to Fremantle. Let's get you back to the
+                Quokkas.</blockquote>
+        </div>
+        </section>
+
+<!-- II. Visual Identity: Typography -->
+
+        <section class="section">
+            <header class="section-header">
+                    <h2 class="section-title">II. Visual Identity: Typography</h2>
+            </header>
+
+                    <p class="detail">The typography for Quokka Adventure combines the friendly, rounded characteristics of Nunito for
+                        headings with the clean, efficient readability of Inter for body text. This pairing reflects our
+                        brand's approachable yet professional nature.</p>
+                        <br>
+                <div class="card">
+                <!--Typography Examples-->
+                <div class="typo-examples">
+                    <div class="typo-sample">
+                        <h1 class="h1-example">H1 - Sun-Drenched Adventure (Nunito Bold)</h1>
+                        <p><code>font-family: 'Nunito', sans-serif;</code> | <code>font-weight: 800;</code> |
+                            <code>3.0rem</code></p>
+                        </div></div></div><br>
+                <div class="card"> 
+                <!--Typography Examples-->
+                        <h2 class="h2-example">H2 - Meet the Happy Little Legends (Nunito Bold)</h2>
+                        <p><code>font-family: 'Nunito', sans-serif;</code> | <code>font-weight: 800;</code> |
+                            <code>2.25rem</code></p>
+                        </div></div><br>
+                <div class="card"><!--Typography Examples-->
+                        <h3 class="h3-example">H3 - Rottnest Island Tours (Nunito Semi-Bold)</h3>
+                        <p>        
+                    <code>font-family: 'Nunito', sans-serif;</code> | <code>font-weight: 700;</code> |
+                            <code>1.5rem</code></p>
+                        </div></div><br>
+                <div class="card"> <!--Typography Examples-->
+                    <h4 class="body-example">H4 - Quokka Adventures (Inter Regular)</h4>
+                        <p>
+                            <code>font-family: 'Inter', sans-serif;</code> | <code>font-weight: 400;</code> |
+                            <code>1.0rem</code></p>
+                           </div></div><br> 
+                <div class="card">
+                        <p class="body-example">
+                        <p>Body Example - Experience the joy of Quokka encounters on Rottnest Island. (Inter Regular)<br>
+                            <code>font-family: 'Inter', sans-serif;</code> | <code>font-weight: 400;</code> |
+                            <code>1.0rem</code></p>
+
+                           </div></div><br> 
+                           
+                    <p class="detail"><strong>Note:</strong> Maintain appropriate line spacing and margins to ensure optimal readability across all text elements.</p>
+                        </div>
+                    </div>
+        </section>
+
+<!-- III. Colour Palette -->
+        <section class="section" id="colour-palette">
+            <header class="section-header">
+                <h2 class="section-title">III. Colour Palette</h2>
+            </header>
+
+            <p class="detail">Our colour palette is inspired by the natural beauty of Rottnest Island and the cheerful spirit of
+                Quokkas. Each colour has been carefully selected to evoke specific emotions and associations that align
+                with our brand values.</p>
+            <br>
+        <div class="image-tile" id="colour-swatch"><br> <div class="container">
+            <!--Colour swatch grid-->
+            <div class="colour-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+
+                <!--sand colour-->
+                <div class="colour-card" style="--bg-color: #EDEAE0; border-color: #000000;   color: var(--color-text-dark);">
+                    <h5 class="card">Rottnest Sand</h5>
+                    <p class="card-body">#EDEAE0</p>
+                </div>
+
+                <!--brown colour-->
+                <div class="colour-card" style="--bg-color: #A1522F;">
+                    <h5 class="card">Quokka Brown</h5>
+                    <p class="card-body">#A1522F</p>
+                </div>
+                <!--blue colour-->
+                <div class="colour-card" style="--bg-color: #0077B6;">
+                    <h5 class="card">Indian Ocean Blue</h5>
+                    <p class="card-body">#0077B6</p>
+                </div>
+                <!--sun colour-->
+                <div class="colour-card" style="--bg-color: #FFC300; color: var(--color-text-dark);">
+                    <h5 class="card">Rottnest Sunrays</h5>
+                    <p class="card-body">#FFC300</p>
+                </div>
+            </div></div></div>
+
+            <p class="detail"><strong>Rottnest Sand</strong> (<code>#EDEAE0</code>) serves as our primary neutral background
+                colour, evoking the serene beaches of Rottnest Island. <br> <strong>Rottnest Sun</strong> (<code>#FFC300</code>) is reserved for high-value strategic use: CTAs,
+                notifications, and small accents that demand attention. <br> <strong>Quokka Brown</strong> (<code>#A1522F</code>) is our primary accent colour, used for headings,
+                key graphics, and elements requiring emphasis. <br> <strong>Indian Ocean Blue</strong> (<code>#0077B6</code>) is our secondary colour, symbolizing trust
+                and reliability, ideal for links, buttons, and informational highlights.</p>
+            </div></div>
+        </section>
+
+        <!-- IV. Interaction & Assets -->
+
+        <section class="section" id="interaction-assets">
+                <h2>IV. Interaction & Assets</h2>
+                <p> This section covers the interactive elements and assets that embody the Quokka Adventure brand.</p></div>
+        </div>
+            <section class="image-tile" id="buttons"> 
+                <div class="container">
+                <div class="button-example">
+                    <!--primary button-->
+                    <button class="btn btn--primary">Primary Button</button>
+                    <!--disabled primary button-->
+                    <button class="btn btn--primary" disabled>Primary Button disabled</button>
+                </div>
+                <div class="button-example">
+                    <!--secondary button-->
+                    <button class="btn btn--secondary">Secondary Button</button>
+                    <!--disabled secondary button-->
+                    <button class="btn btn--secondary" disabled>Secondary Button disabled</button>
+                </div>
+                <div class="button-example">
+                    <!--default button-->
+                    <button class="btn btn--default">Default Button</button>
+                    <!--disabled default button-->
+                    <button class="btn btn--default" disabled>Default Button disabled</button>
+                </div>
+                <div class="button-example">
+                    <!--llm button-->
+                    <button class="btn btn--llm">LLM Button</button>
+                    <!--disabled llm button-->
+                    <button class="btn btn--llm" disabled>llm button Disabled...</button></div>
+                <div class="button-example">
+                    <!--brand specific button-->
+                    <button class="btn btn-quokka">Quokka Adventure</button>
+                    <!--disabled brand specific button-->
+                    <button class="btn btn-quokka" disabled>Quokka Adventure Disabled</button>
+                </div>
+               
+
+
+
+
+
+                </div>
+        </section>
+
+        <section class="section">
+            <!-- Logo Assets Section -->
+            <h3>Logo Assets</h3>
+            <p>These are the approved logo assets for Quokka Adventure, designed for various applications across digital
+                and print media. Maintain clear space as per brand guidelines.</p>
+
+            <div class="logo-placeholder">
+                <img src="./images/quokkas-logo-xl.png"
+                    alt="Quokka Adventure Primary Logo XL (Full colour, large display)" class="logo-img">
+                <p class="detail"><strong>Primary Logo (XL):</strong> <code>./images/quokkas-logo-xl.png</code></p>
+                <p class="detail">This is the main, full-colour logo for large applications like website headers, major
+                    signage, and print materials. Use where maximum brand visibility and impact are desired.</p>
+            </div>
+
+            <div class="logo-placeholder">
+                <img src="./images/quokka-square.png" alt="Quokka Adventure Square Logo (Iconic, compact version)"
+                    class="logo-img">
+                <p class="detail"><strong>Square Logo:</strong> <code>./images/quokka-square.png</code></p>
+                <p class="detail">A compact, iconic version of the logo suitable for app icons, social media profile
+                    pictures, and situations requiring a square format.</p>
+            </div>
+
+            <div class="logo-placeholder">
+                <img src="./images/quokkas-navbar-sunrays.png" alt="Quokka Adventure Navbar Logo (Compact with sunrays)"
+                    class="logo-img">
+                <p class="detail"><strong>Navbar Logo (Sunrays):</strong> <code>./images/quokkas-navbar-sunrays.png</code></p>
+                <p class="detail">A streamlined version of the logo, specifically optimized for use within navigation
+                    bars, featuring subtle sunray elements for a dynamic feel.</p>
+            </div>
+
+            <div class="logo-placeholder">
+                <img src="./images/quokkas-logo-text.png" alt="Quokka Adventure Flat Logo (No background, versatile)"
+                    class="logo-img">
+                <p class="detail"><strong>Flat Logo (No Background):</strong> <code>./images/quokkas-logo-text.png</code></p>
+                <p class="detail">A versatile version of the logo without a background, ideal for overlaying on
+                    photographic content or coloured sections where transparency is required.</p>
+            </div>
+
+            <div class="logo-placeholder">
+                <img src="./images/quokkas-flavicon-plain.png"
+                    alt="Quokka Adventure Favicon (Plain, standard browser icon)" class="logo-img logo-icon">
+                <p class="detail"><strong>Favicon (Plain):</strong> <code>./images/quokkas-flavicon-plain.png</code></p>
+                <p class="detail">The standard, simple favicon for browser tabs. Designed for maximum recognition at
+                    small sizes.</p>
+            </div>
+
+            <div class="logo-placeholder">
+                <img src="./images/quokkas-flavicon-sunbeams.png" alt="Quokka Adventure Favicon (Sunbeams version)"
+                    class="logo-img logo-icon">
+                <p class="detail"><strong>Favicon (Sunbeams):</strong> <code>./images/quokkas-flavicon-sunbeams.png</code></p>
+                <p class="detail">An alternative favicon with subtle sunbeam details, adding a touch of dynamism to
+                    browser tabs.</p>
+            </div>
+
+            <div class="logo-placeholder">
+                <img src="./images/quokkas-flavicon-text.png" alt="Quokka Adventure Favicon (Text-based)"
+                    class="logo-img logo-icon">
+                <p class="detail"><strong>Favicon (Text):</strong> <code>./images/quokkas-flavicon-text.png</code></p>
+                <p class="detail">A text-based favicon option for situations where the iconic mark might not be clear
+                    enough or a brand initial is preferred.</p>
+            </div>
+
+            <div class="logo-placeholder">
+                <img src="./images/quokkas-flavicon-xs.png" alt="Quokka Adventure Favicon (Extra Small, 16x16)"
+                    class="logo-img logo-icon">
+                <p class="detail"><strong>Favicon (Extra Small):</strong> <code>./images/quokkas-flavicon-xs.png</code></p>
+                <p class="detail">The smallest favicon version, specifically optimized for 16x16 pixel display on older
+                    browsers or specific UI elements.</p>
+            </div>
+
+            <div class="logo-placeholder">
+                <img src="./images/quokkas-logo-text.png" alt="Quokka Adventure Text Logo" class="logo-img">
+                <p class="detail"><strong>Text Logo:</strong> <code>./images/quokkas-logo-text.png</code></p>
+                <p class="detail">The wordmark-only version of the logo, ideal for footers, sponsor sections, or when a
+                    more subtle brand presence is required.</p>
+            </div>
+
+            <div class="logo-placeholder">
+                <img src="./images/quokkas-navbar-tilted.png" alt="Quokka Adventure Navbar Logo (Tilted for dynamism)"
+                    class="logo-img">
+                <p class="detail"><strong>Navbar Logo (Tilted):</strong> <code>./images/quokkas-navbar-tilted.png</code></p>
+                <p class="detail">A playful, tilted version of the logo for navigation bars, adding dynamism and a touch
+                    of wit to the user interface.</p>
+            </div>
+
+            <div class="logo-placeholder">
+                <img src="./images/quokkas-socials-1.png" alt="Quokka Adventure Social Media Icon"
+                    class="logo-img logo-icon">
+                <p class="detail"><strong>Social Media Icon:</strong> <code>./images/quokkas-socials-1.png</code></p>
+                <p class="detail">Optimized icon for social media platforms, ensuring clear visibility and brand
+                    recognition across various channels.
+                </p>
+            </div>
+        </div>
+</section>
+
+        <!-- V. FEATURED IMAGE ASSETS (TILES) -->
+        <section class="section">
+            <header class="section-header">
+                <h2 class="section-title">V. Featured Image Assets (Tiles)</h2>
+            </header>
+            <p>These assets are approved for hero banners, testimonials, and lifestyle photography. Imagery should
+                always be high-resolution, sun-drenched, and reflect authenticity.</p>
+            <div class="image-tiles-grid">
+                <div class="image-tile">
+                    <img src="/images/Gemini_Generated_Image_8994ej8994ej8994 (1).png"
+                        alt="Breathtaking panoramic view of Rottnest Island bay at sunset with clear water.">
+                    <h4>Rotto Panorama (Hero)</h4>
+                    <p class="detail">Usage: Hero Sections, Large Banners. <strong>Establishes location and mood.</strong></p>
+                </div>
+                <div class="image-tile">
+                    <img src="/images/Gemini_Generated_Image_8994ej8994ej8994 (2).png"
+                        alt="Diverse group of guests cycling happily on a coastal path on Rottnest Island.">
+                    <h4>Lifestyle Cycling (Joyful)</h4>
+                    <p class="detail">Usage: Testimonials, 'What to Expect' section. <strong>Focus on guest experience.</strong></p>
+                </div>
+                <div class="image-tile">
+                    <img src="/images/Gemini_Generated_Image_8994ej8994ej8994.png"
+                        alt="Close-up of a smiling quokka face at ground level, emphasizing happiness.">
+                    <h4>Quokka Close-up (Moment)</h4>
+                    <p class="detail">Usage: Product Cards, Social Media. <strong>Captures the core appeal.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VI. GEMINI AI INTEGRATION: 
+         BRAND VOICE ASSISTANT -->
+        
+         <section class="section">
+            <h2 class="section-title">VI: AI Copywriter & Brand Voice Check</h2>
+            <p>Use the <strong>Witty, Casual, Enthusiastic, and Affectionate</strong> brand voice to instantly polish marketing copy
+                or generate ideas.</p>
+            <div class="container">
+            <div class="llm-card">
+                <h4>Draft your Copy</h4>
+                <textarea id="input-draft"
+                    placeholder="Paste your draft text here (e.g., 'Our boat tour is fast and efficient and takes you directly to the Quokkas.')"></textarea>
+                <button id="generate-btn" class="btn btn--llm" onclick="rewriteCopy()">Rewrite to Match Brand
+                    Voice</button>
+                    </div>
+<div class="llm-card" style="margin-top: 16px;">
+                <h4>Quokka Adventure Voice Result</h4>
+                <div id="output-box">The result will appear here.</div>
+            </div>
+        </section>
+        <!-- END VI. GEMINI AI INTEGRATION -->
+
+    </main>
+
+    <script>
+        const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=";
+        const apiKey = ""; // API key is provided at runtime
+
+        // The Brand Voice is embedded directly into the system instruction
+        const SYSTEM_PROMPT = `You are a witty, casual, enthusiastic, and affectionate copywriter for Quokka Adventure, a Western Australian tour company. Your goal is to rewrite the text provided to match this brand voice. 
+        
+        Rules:
+        1. Use Aussie slang sparingly ('mate', 'legend', 'ripper') and naturally.
+        2. Maintain a sunny, joyful, and approachable tone.
+        3. Keep the output concise, focusing on the rewritten copy only.
+        4. NEVER use corporate jargon or overly formal language.`;
+
+        async function callGemini(userQuery) {
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: {
+                    parts: [{ text: SYSTEM_PROMPT }]
+                },
+            };
+
+            const maxRetries = 3;
+            for (let attempt = 0; attempt < maxRetries; attempt++) {
+                try {
+                    const response = await fetch(API_URL + apiKey, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        const error = await response.json();
+                        throw new Error(error.error.message || `API error: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    const text = result.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, mate, couldn't rewrite that one. Try again!";
+                    return text;
+
+                } catch (error) {
+                    console.error(`Attempt ${attempt + 1} failed:`, error.message);
+                    if (attempt === maxRetries - 1) {
+                        return `Error: Failed to connect to the Quokka copywriting genius after ${maxRetries} tries. Try checking the console!`;
+                    }
+                    // Exponential backoff
+                    const delay = Math.pow(2, attempt) * 1000;
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                }
+            }
+        }
+
+        async function rewriteCopy() {
+            const inputDraft = document.getElementById('input-draft').value.trim();
+            const outputBox = document.getElementById('output-box');
+            const generateBtn = document.getElementById('generate-btn');
+
+            if (inputDraft.length < 5) {
+                outputBox.innerHTML = "Needs a bit more text, legend. Give me at least a sentence!";
+                return;
+            }
+
+            // Show loading state
+            generateBtn.disabled = true;
+            generateBtn.innerHTML = "Rewriting... (Just a sec)";
+            outputBox.innerHTML = `<div class="loading-indicator">The copywriting Quokka is working its magic...</div>`;
+
+            const resultText = await callGemini(`Rewrite the following text to sound like Quokka Adventure: "${inputDraft}"`);
+
+            // Restore button state and display result
+            generateBtn.disabled = false;
+            generateBtn.innerHTML = "✨ Rewrite to Match Brand Voice";
+            outputBox.innerHTML = resultText;
+        }
+
+        // Add a sample text placeholder
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('input-draft').value = "Our new service offers customers a highly efficient way to reserve tickets and access premium viewing areas for the quokkas.";
+        });
+    </script>
+</body>
+
+</html>
